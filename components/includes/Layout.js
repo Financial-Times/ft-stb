@@ -22,13 +22,15 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-size: 1.5rem;
     line-height:1.5;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
 
 
   }
   a {
-    color: black;
-    font-weight: bold;
-    text-decoration: underline;
+    color: #FF7442;
+  
+    text-decoration: none;
     
 
   }
@@ -65,10 +67,12 @@ const GlobalStyles = createGlobalStyle`
 
   
   h2 {
-    line-height: 1.2;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 24px;
+
     @media ${device.tablet} {
-       font-size: 36px;
-       margin-bottom: 10px;
       }
     }
   

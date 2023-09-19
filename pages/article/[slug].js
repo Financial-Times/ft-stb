@@ -14,6 +14,7 @@ import Related from '~/components/article/Related';
 import Quote from '~/components/article/Quote';
 import Hero from '~/components/article/Hero';
 import Script from 'next/script';
+import AnimationOne from '~/components/animation/AnimationOne';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -64,6 +65,16 @@ export default function ArticlePage({ post, related }) {
         }
     }, [cookieConsent, site, loaded]);
 
+    function renderAnimation(id) {
+        switch (id) {
+            case 1:
+                return <AnimationOne />;
+
+            default:
+                return null;
+        }
+    }
+
     return (
         <>
             <Head>
@@ -88,15 +99,17 @@ export default function ArticlePage({ post, related }) {
                                             data={el.data}
                                         />
                                     );
-                                // case 'quote':
-                                //     return <Quote key={el.id} data={el.data} />;
+                                case 'quote':
+                                    return <Quote key={el.id} data={el.data} />;
+                                case 'animation':
+                                    return renderAnimation(el.data);
                             }
                         })}
                     </ArticleContainer>
                 </main>
             </Wrapper>
             <Related data={related} />
-            <Pixel src="https://collector.brandmetrics.com/Info?pixel=e547afbc309d40bb8703bbc4fbd865f4" />
+            {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=e547afbc309d40bb8703bbc4fbd865f4" />
             <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
             <div id="brandmetrics-survey" className="brandmetrics-survey">
                 <script
@@ -108,7 +121,7 @@ export default function ArticlePage({ post, related }) {
                     }, 10000);`,
                     }}
                 ></script>
-            </div>
+            </div> */}
         </>
     );
 }

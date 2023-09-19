@@ -4,30 +4,39 @@ import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitText from 'gsap/src/SplitText';
+import PageWrapper from '../includes/PageWrapper';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Container = styled.div`
     font-family: 'Inter', sans-serif;
     background-color: rgb(248 211 146 / 20%);
+    position: relative;
 
     @media ${device.tablet} {
+        padding: 96px 0;
+        margin: 88px 0;
     }
 `;
 
 const Wrapper = styled.div`
-    max-width: 800px;
+    max-width: 780px;
     margin: 0 auto;
-    @media ${device.tablet} {
-    }
-`;
+    position: relative;
 
-const Word = styled.div`
-    margin-right: 5px;
-    font-weight: 500;
-    color: #d9d9d9;
+    &:after {
+        content: '"';
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        z-index: -1;
+        font-family: 'Passion One', cursive;
+        line-height: 1;
+        font-size: 440px;
+        color: #f8d392;
+        opacity: 0.5;
+    }
     @media ${device.tablet} {
-        font-size: 30px;
     }
 `;
 
@@ -35,6 +44,8 @@ const ScrollingWords = styled.div`
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
+    .text {
+    }
 
     .text > p > div {
         background: linear-gradient(to right, #ff6e3d 50%, #d9d9d9 50%);
@@ -43,13 +54,28 @@ const ScrollingWords = styled.div`
         color: transparent;
         background-clip: text;
         -webkit-background-clip: text;
-        margin-left: 50px;
         line-height: 1.2;
-        font-size: 50px;
+        font-size: 40px;
     }
 
     @media ${device.tablet} {
-        padding: 96px 20px;
+    }
+`;
+
+const AuthorSection = styled.div`
+    font-weight: bold;
+    font-size: 18px;
+    @media ${device.tablet} {
+    }
+`;
+
+const Author = styled.div`
+    @media ${device.tablet} {
+    }
+`;
+
+const Job = styled.div`
+    @media ${device.tablet} {
     }
 `;
 
@@ -57,7 +83,10 @@ const Quote = ({ data }) => {
     const container = useRef(null);
 
     useEffect(() => {
-        const split = new SplitText('p', { type: 'lines' });
+        const split = new SplitText(
+            container.current.querySelectorAll('.text p'),
+            { type: 'lines' }
+        );
 
         split.lines.forEach((target) => {
             gsap.to(target, {
@@ -67,21 +96,29 @@ const Quote = ({ data }) => {
                     trigger: target,
                     markers: true,
                     scrub: 1,
-                    start: 'top center',
+                    start: '-10% center',
                     end: 'bottom center',
                 },
             });
         });
+
+        container.current.querySelector('.text').style.whiteSpace = 'nowrap';
     }, []);
 
     return (
         <Container ref={container}>
             <Wrapper>
-                <ScrollingWords>
-                    <div className="text">
-                        <p>{data}</p>
-                    </div>
-                </ScrollingWords>
+                <PageWrapper>
+                    <ScrollingWords>
+                        <div className="text">
+                            <p>{data.quote}</p>
+                        </div>{' '}
+                    </ScrollingWords>
+                    <AuthorSection>
+                        <Author>{data.author}</Author>
+                        <Job>{data.job}</Job>
+                    </AuthorSection>
+                </PageWrapper>
             </Wrapper>
         </Container>
     );

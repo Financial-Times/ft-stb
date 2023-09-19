@@ -27,7 +27,7 @@ const Container = styled.div`
 `;
 
 const MaxWrapper = styled.div`
-    max-width: 1800px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -57,6 +57,14 @@ const Wrapper = styled.div`
 const Content = styled.div`
     max-width: 100%;
     flex-basis: 100%;
+
+    p {
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
     @media ${device.tablet} {
         max-width: 40%;
         flex-basis: 40%;

@@ -77,14 +77,7 @@ export default function Home({ data }) {
                 <Metadata title={true} data={metaData} />
             </Head>
             <Container>
-                <main>
-                    <AnimationOne />
-                    <Quote
-                        data={
-                            'Singapore has a clear framework on food regulations, a strong network of food ingredient players with local operations, and a pool of R&D talent that make it an attractive place for food and beverage innovations'
-                        }
-                    />
-                </main>
+                <main></main>
                 {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=59bce001375b4b4098bafa219d383803" />
                 <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
                 <div id="brandmetrics-survey" className="brandmetrics-survey">
