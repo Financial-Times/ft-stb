@@ -1,0 +1,38 @@
+{
+	"name": "ft-edp",
+	"version": "1.0",
+	"private": true,
+	"cacheDirectories": [
+		".next/cache"
+	],
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"export": "next export",
+		"start": "next start",
+		"lint": "next lint",
+		"heroku-postbuild": "yarn run build"
+	},
+	"dependencies": {
+		"@lottiefiles/react-lottie-player": "^3.5.3",
+		"@svgr/webpack": "^6.3.1",
+		"axios": "^0.27.2",
+		"gsap": "^3.10.4",
+		"moment": "^2.29.4",
+		"next": "12.2.4",
+		"prop-types": "^15.8.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-ga": "^3.3.0",
+		"react-gtm-module": "^2.0.11",
+		"styled-components": "^5.3.0",
+		"swiper": "^8.3.2"
+	},
+	"devDependencies": {
+		"babel-plugin-styled-components": "^2.0.7",
+		"eslint": "8.21.0",
+		"eslint-config-next": "12.2.4",
+		"prettier": "^2.8.8",
+		"sass": "^1.57.1"
+	}
+}
