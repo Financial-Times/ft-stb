@@ -15,11 +15,15 @@ const Container = styled.div`
         top: 50%;
         left: 0;
         width: 100%;
-        height: calc(90% - 100px);
+        height: 100%;
         opacity: 0.2;
         background: #f8d392;
         transform: translateY(-50%);
         z-index: 1;
+
+        @media ${device.tablet} {
+            height: calc(90% - 100px);
+        }
     }
 
     @media ${device.tablet} {
@@ -30,7 +34,7 @@ const MaxWrapper = styled.div`
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     @media ${device.tablet} {
@@ -43,9 +47,12 @@ const Wrapper = styled.div`
     flex-basis: 100%;
     position: relative;
     aspect-ratio: 1;
+    padding-bottom: 100%;
+
     @media ${device.tablet} {
         max-width: 60%;
         flex-basis: 60%;
+        padding-bottom: 0;
     }
 
     #lottie {
@@ -57,12 +64,18 @@ const Wrapper = styled.div`
 const Content = styled.div`
     max-width: 100%;
     flex-basis: 100%;
+    padding: 20px;
+    text-align: center;
 
     p {
         font-family: 'Inter', sans-serif;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 1.2;
         font-weight: 500;
+
+        @media ${device.tablet} {
+            font-size: 30px;
+        }
     }
 
     @media ${device.tablet} {
@@ -88,11 +101,18 @@ const Floating = styled.div`
     border-radius: 10.7px;
     box-shadow: 0px 8px 24px -4px rgba(24, 39, 75, 0.08),
         0px 6px 12px -6px rgba(24, 39, 75, 0.12);
+    font-size: 12px;
 
     &[data-pos='1'] {
         position: absolute;
-        top: 30%;
-        left: 8%;
+
+        top: 20%;
+        left: 5%;
+
+        @media ${device.tablet} {
+            top: 30%;
+            left: 8%;
+        }
     }
 
     &[data-pos='2'] {
@@ -109,8 +129,13 @@ const Floating = styled.div`
 
     &[data-pos='4'] {
         position: absolute;
-        bottom: 35%;
-        right: 10%;
+        bottom: 15%;
+        right: 5%;
+
+        @media ${device.tablet} {
+            bottom: 35%;
+            right: 10%;
+        }
     }
 
     @media ${device.tablet} {
@@ -131,10 +156,10 @@ const AnimationOne = ({ data }) => {
 
         const floats = floatingRef.current.querySelectorAll('.floating');
 
-        floats.forEach((item) => {
+        floats.forEach((item, i) => {
             gsap.set(item, {
-                x: randomX(-0.5),
-                y: randomX(0.5),
+                x: randomX(-0.5 * i),
+                y: randomX(0.5 * 2),
                 rotation: randomAngle(-0.5),
             });
 

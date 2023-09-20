@@ -10,6 +10,7 @@ const Container = styled.div`
     padding-bottom: 54px;
 
     @media ${device.tablet} {
+        padding-bottom: 54px;
     }
 `;
 
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled.div`
     position: relative;
-    aspect-ratio: 2.5;
+    aspect-ratio: 1;
     margin-bottom: 20px;
 
     img {
@@ -28,17 +29,20 @@ const ImageWrapper = styled.div`
         object-position: center center;
     }
     @media ${device.tablet} {
+        aspect-ratio: 2.5;
     }
 `;
 
 const Nav = styled.div`
-    margin-bottom: 70px;
+    margin-bottom: 34px;
     @media ${device.tablet} {
+        margin-bottom: 70px;
     }
 `;
 
 const NavTitle = styled.div`
     color: #3d464d;
+    white-space: nowrap;
     @media ${device.tablet} {
     }
 `;
@@ -49,13 +53,14 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    font-size: 54px;
+    font-size: 44px;
+    line-height: 1.2;
     font-style: normal;
     font-weight: 500;
-    line-height: 70.2px;
     margin-bottom: 24px;
     @media ${device.tablet} {
         font-size: 54px;
+        line-height: 70.2px;
     }
 `;
 
@@ -75,11 +80,15 @@ const GoBack = styled.div`
 `;
 
 const StandFirst = styled.div`
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.2;
+
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+
     @media ${device.tablet} {
+        font-size: 24px;
+        line-height: 28px;
     }
 `;
 

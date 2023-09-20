@@ -12,6 +12,8 @@ const Container = styled.div`
     font-family: 'Inter', sans-serif;
     background-color: rgb(248 211 146 / 20%);
     position: relative;
+    padding: 48px 0;
+    margin: 44px 0;
 
     @media ${device.tablet} {
         padding: 96px 0;
@@ -27,12 +29,12 @@ const Wrapper = styled.div`
     &:after {
         content: '"';
         position: absolute;
-        top: 50%;
+        top: 40%;
         right: 0%;
         z-index: -1;
         font-family: 'Passion One', cursive;
         line-height: 1;
-        font-size: 440px;
+        font-size: 640px;
         color: #f8d392;
         opacity: 0.5;
     }
@@ -44,8 +46,6 @@ const ScrollingWords = styled.div`
     display: inline-flex;
     flex-wrap: wrap;
     width: 100%;
-    .text {
-    }
 
     .text > p > div {
         background: linear-gradient(to right, #ff6e3d 50%, #d9d9d9 50%);
@@ -55,7 +55,10 @@ const ScrollingWords = styled.div`
         background-clip: text;
         -webkit-background-clip: text;
         line-height: 1.2;
-        font-size: 40px;
+        font-size: 26px;
+        @media ${device.tablet} {
+            font-size: 40px;
+        }
     }
 
     @media ${device.tablet} {
@@ -94,7 +97,7 @@ const Quote = ({ data }) => {
                 ease: 'none',
                 scrollTrigger: {
                     trigger: target,
-                    markers: true,
+                    markers: false,
                     scrub: 1,
                     start: '-10% center',
                     end: 'bottom center',

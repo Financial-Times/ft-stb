@@ -29,14 +29,11 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     color: #FF7442;
-  
     text-decoration: none;
-    
-
+  
   }
   a:hover {
     text-decoration: none;
-    color: #2C5BD3;
 
   }
   button {
@@ -120,7 +117,6 @@ export default function Page({ children }) {
             <Disclaimer client="STB" />
             {children}
             <ClientFooter />
-            <BTTButton />
             <Footer />
             <HeaderOuter />
         </>
