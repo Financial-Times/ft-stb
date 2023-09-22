@@ -48,6 +48,7 @@ const Wrapper = styled.div`
     position: relative;
     aspect-ratio: 1;
     padding-bottom: 100%;
+    height: 100%;
 
     @media ${device.tablet} {
         max-width: 60%;

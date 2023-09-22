@@ -21,21 +21,21 @@ const Wrapper = styled.div`
     margin: 50px 0;
 
     a {
-      text-transform: uppercase;
-      border: 2px solid #0c305c;
-      display: inline-block;
-      padding: 15px 25px;
-      text-decoration: none;
-      color: #0c305c;
-      transition: 0.6s ease-in-out;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 1px;
+        text-transform: uppercase;
+        border: 2px solid #0c305c;
+        display: inline-block;
+        padding: 15px 25px;
+        text-decoration: none;
+        color: #0c305c;
+        transition: 0.6s ease-in-out;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
         &:hover {
-          background-color: #004990;
-          border: 2px solid #004990;
-          color: #fff;
+            background-color: #004990;
+            border: 2px solid #004990;
+            color: #fff;
         }
     }
 
@@ -47,7 +47,8 @@ const Cta = ({ data }) => {
         <Container>
             <Wrapper>
                 <Link href={data.link}>
-                    Watch the full length ETF@30 videos
+                    Why is Singapore a leading hub for events? Discover
+                    Singapore here
                 </Link>
             </Wrapper>
         </Container>
