@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }) {
     const [site, setSite] = useState('');
 
     useEffect(() => {
-        TagManager.initialize({ gtmId: 'GTM-WWV5Z2DJ' });
+        TagManager.initialize({ gtmId: 'GTM-M73HRRNH' });
     }, []);
 
     useEffect(() => {
