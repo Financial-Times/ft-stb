@@ -114,7 +114,7 @@ export default function Page({ children }) {
         <>
             <GlobalStyles />
             <Header />
-            <Disclaimer client="STB" />
+            <Disclaimer client="Singapore Tourism Board" />
             {children}
             <ClientFooter />
             <Footer />

@@ -15,6 +15,9 @@ import Quote from '~/components/article/Quote';
 import Hero from '~/components/article/Hero';
 import Script from 'next/script';
 import AnimationOne from '~/components/animation/AnimationOne';
+import AnimationTwo from '~/components/animation/AnimationTwo';
+import Cta from '~/components/article/Cta';
+import Magnet from '~/components/includes/Magnet';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -68,7 +71,8 @@ export default function ArticlePage({ post, related }) {
         switch (id) {
             case 1:
                 return <AnimationOne />;
-
+            case 2:
+                return <AnimationTwo />;
             default:
                 return null;
         }
@@ -104,6 +108,7 @@ export default function ArticlePage({ post, related }) {
                                     return renderAnimation(el.data);
                             }
                         })}
+                        <Magnet />
                     </ArticleContainer>
                 </main>
             </Wrapper>
