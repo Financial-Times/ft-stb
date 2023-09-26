@@ -46,10 +46,7 @@ const Cta = ({ data }) => {
     return (
         <Container>
             <Wrapper>
-                <Link href={data.link}>
-                    Why is Singapore a leading hub for events? Discover
-                    Singapore here
-                </Link>
+                <Link href={data.link}>Discover Singapore here</Link>
             </Wrapper>
         </Container>
     );
