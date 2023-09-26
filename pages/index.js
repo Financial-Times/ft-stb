@@ -119,13 +119,12 @@ export default function Home({ data }) {
         }
     }, [cookieConsent]);
 
-    console.log(data);
     return (
         <>
             <Head>
                 <title>
-                    Determined, not deterred - Financial Times - Partner Content
-                    by SINGAPORE TOURISM BOARD
+                    Lorem - Financial Times - Partner Content by SINGAPORE
+                    TOURISM BOARD
                 </title>
                 <Metadata title={true} data={metaData} />
             </Head>

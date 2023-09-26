@@ -91,7 +91,7 @@ const Cta = styled.div`
 const ArticleCard = ({ data }) => {
     return (
         <Container>
-            <Link href={`/article/${data.id}`}>
+            <a href={`/article/${data.id}`}>
                 <Wrapper>
                     <ImageWrapper>
                         <Image
@@ -119,7 +119,7 @@ const ArticleCard = ({ data }) => {
                         </Cta>
                     </Content>
                 </Wrapper>
-            </Link>
+            </a>
         </Container>
     );
 };

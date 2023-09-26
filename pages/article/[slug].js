@@ -17,6 +17,7 @@ import AnimationOne from '~/components/animation/AnimationOne';
 import AnimationTwo from '~/components/animation/AnimationTwo';
 import Magnet from '~/components/includes/Magnet';
 import Footnotes from '~/components/includes/Footnotes';
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -38,6 +39,9 @@ const ArticleContainer = styled.div`
 export default function ArticlePage({ post, related }) {
     const { cookieConsent, site } = useContext(AppContext);
     const [loaded, setLoaded] = useState(false);
+    const router = useRouter();
+
+    useEffect(() => {}, []);
 
     useEffect(() => {
         const isCurrentUrl = () => {
@@ -66,7 +70,7 @@ export default function ArticlePage({ post, related }) {
         }
     }, [cookieConsent, site, loaded]);
 
-    function renderAnimation(id) {
+    const RenderAnimation = ({ id }) => {
         switch (id) {
             case 1:
                 return <AnimationOne />;
@@ -75,7 +79,7 @@ export default function ArticlePage({ post, related }) {
             default:
                 return null;
         }
-    }
+    };
 
     return (
         <>
@@ -91,24 +95,29 @@ export default function ArticlePage({ post, related }) {
                 <Hero data={post.metaData} />
                 <main className="main" id="content">
                     <ArticleContainer>
-                        {post.content.map((el) => {
+                        {post.content.map((el, i) => {
                             switch (el.type) {
                                 case 'content':
                                     return (
                                         <Content
-                                            key={el.id}
+                                            key={i}
                                             id={el.id}
                                             data={el.data}
                                         />
                                     );
                                 case 'quote':
-                                    return <Quote key={el.id} data={el.data} />;
+                                    return <Quote key={i} data={el.data} />;
                                 case 'animation':
-                                    return renderAnimation(el.data);
+                                    return (
+                                        <RenderAnimation
+                                            key={i}
+                                            data={el.data}
+                                        />
+                                    );
                                 case 'cta':
-                                    return <Magnet data={el.data} />;
+                                    return <Magnet key={i} data={el.data} />;
                                 case 'footnotes':
-                                    return <Footnotes data={el.data} />;
+                                    return <Footnotes key={i} data={el.data} />;
                             }
                         })}
                     </ArticleContainer>

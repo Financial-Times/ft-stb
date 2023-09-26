@@ -68,7 +68,7 @@ const Title = styled.div`
 
 const RelatedItem = ({ data }) => {
     return (
-        <Link href={`/article/${data.id}`}>
+        <a href={`/article/${data.id}`}>
             <Container data-color={data.color}>
                 <ComponentWrapper>
                     <>
@@ -85,7 +85,7 @@ const RelatedItem = ({ data }) => {
                     </>
                 </ComponentWrapper>
             </Container>
-        </Link>
+        </a>
     );
 };
 
