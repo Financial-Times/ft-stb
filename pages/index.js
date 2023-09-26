@@ -67,6 +67,7 @@ export default function Home({ data }) {
         }
     }, [cookieConsent]);
 
+    console.log(data);
     return (
         <>
             <Head>
@@ -77,7 +78,11 @@ export default function Home({ data }) {
                 <Metadata title={true} data={metaData} />
             </Head>
             <Container>
-                <main></main>
+                <main>
+                    {data.map((item, i) => {
+                        return item.id;
+                    })}
+                </main>
                 {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=59bce001375b4b4098bafa219d383803" />
                 <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
                 <div id="brandmetrics-survey" className="brandmetrics-survey">
