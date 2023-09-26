@@ -66,7 +66,7 @@ const Content = styled.div`
     max-width: 100%;
     flex-basis: 100%;
     padding: 20px;
-    text-align: center;
+    text-align: right;
 
     p {
         font-family: 'Inter', sans-serif;

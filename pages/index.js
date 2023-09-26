@@ -1,7 +1,5 @@
-import { useEffect, useContext, useState, useRef } from 'react';
+import { useEffect, useContext, useRef } from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import Metadata from '~/components/includes/Metadata';
@@ -11,10 +9,12 @@ import FtAnalytics from '~/config/FtAnalytics';
 import FtEvents from '~/config/FtEvents';
 
 import { AppContext } from './_app';
-import AnimationOne from '~/components/animation/AnimationOne';
-import Quote from '../components/article/Quote';
+import ArticleCard from '~/components/article/ArticleCard';
+import Image from 'next/image';
 
-const Container = styled.div``;
+const Container = styled.div`
+    background-color: #fef6e9;
+`;
 
 const Pixel = styled.img`
     position: absolute;
@@ -23,29 +23,81 @@ const Pixel = styled.img`
     }
 `;
 
+const ArticleContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1220px;
+    padding: 0 20px;
+    margin: 0 auto;
+    padding: 0 20px;
+    transform: translateY(-150px);
+    justify-content: center;
+    align-items: center;
+
+    @media ${device.laptop} {
+        flex-direction: row;
+        gap: 32px;
+        transform: translateY(-150px);
+    }
+`;
+
+const HubHero = styled.div`
+    position: relative;
+    aspect-ratio: 1;
+
+    img {
+        object-fit: cover;
+        object-position: center center;
+    }
+    @media ${device.tablet} {
+        aspect-ratio: 2;
+    }
+`;
+
+const HubHeroTitle = styled.div`
+    position: absolute;
+    max-width: 800px;
+    width: 100%;
+    top: 30%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 3;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0 20px;
+    @media ${device.tablet} {
+        font-size: 54px;
+    }
+`;
+
 const metaData = {
     title: 'Determined, not deterred',
     desc: 'Companies can cut costs and drive growth at the same time. Despite a backdrop of macro uncertainty, leading organisations are doubling down on their digital transformation efforts in order to prioritise both goals.',
-    contentType: 'article',
-    publicationDate: '2023-08-29',
-    campaignName: 'ServiceNow',
-    advertiserName: 'ServiceNow',
-    primaryIndustryAdvertiser: 'Technology',
-    contentAuthor: 'Alpha_Grid',
+    contentType: 'hub',
+    publicationDate: '2023-10-13',
+    campaignName: 'STB',
+    advertiserName: 'STB',
+    primaryIndustryAdvertiser: 'Tourist Boards',
+    contentAuthor: 'External',
     brandedContent: true,
-    contentStyle: 'Research',
-    primaryTopic: 'Companies',
-    secondaryTopic: 'Corporate_governance',
-    adbookId: 433103,
+    contentStyle: 'Thought_leadership',
+    primaryTopic: 'Economy',
+    secondaryTopic: 'Asia-pacific_economy',
+    adbookId: 444226,
     hasVideo: false,
     videoStyle: null,
-    wordCount: 50,
-    commercialProduct: 'ft',
     type: 'Immersive_article',
+    wordCount: 1006,
+    commercialProduct: 'ft',
     productType: 'ft',
     pageDesignType: 'bespoke',
-    articleImage: 'https://ft.com/partnercontent/servicenow/images/A2.jpg',
-    articleUrl: 'https://servicenow.ft.com/article/doing-well-by-doing-good',
+    articleImage: 'https://ft.com/partnercontent/stb/images/hubHero.jpg',
+    articleUrl: 'https://stb.ft.com/article/singapore-shaping-future-finance',
 };
 
 export default function Home({ data }) {
@@ -73,15 +125,27 @@ export default function Home({ data }) {
             <Head>
                 <title>
                     Determined, not deterred - Financial Times - Partner Content
-                    by ServiceNow
+                    by SINGAPORE TOURISM BOARD
                 </title>
                 <Metadata title={true} data={metaData} />
             </Head>
             <Container>
                 <main>
-                    {data.map((item, i) => {
-                        return item.id;
-                    })}
+                    <HubHero>
+                        <HubHeroTitle>
+                            Lorem Ipsum dolor sit amet consectetur
+                        </HubHeroTitle>
+                        <Image
+                            src={metaData.articleImage}
+                            layout="fill"
+                            alt="hub hero image"
+                        />
+                    </HubHero>
+                    <ArticleContainer>
+                        {data.map((item, i) => {
+                            return <ArticleCard key={i} data={item} />;
+                        })}
+                    </ArticleContainer>
                 </main>
                 {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=59bce001375b4b4098bafa219d383803" />
                 <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>

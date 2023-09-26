@@ -7,7 +7,6 @@ import { device } from '~/config/utils';
 
 const Container = styled.div`
     position: relative;
-    font-family: 'Prompt', sans-serif;
     text-align: left;
     @media ${device.tablet} {
     }

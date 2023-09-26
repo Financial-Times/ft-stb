@@ -55,7 +55,7 @@ const ScrollingWords = styled.div`
         background-clip: text;
         -webkit-background-clip: text;
         line-height: 1.2;
-        font-size: 26px;
+        font-size: 22px;
         @media ${device.tablet} {
             font-size: 40px;
         }
@@ -99,7 +99,7 @@ const Quote = ({ data }) => {
                     trigger: target,
                     markers: false,
                     scrub: 1,
-                    start: '-10% center',
+                    start: '-30% center',
                     end: 'bottom center',
                 },
             });

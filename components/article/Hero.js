@@ -114,7 +114,9 @@ const Hero = ({ data }) => {
                     </Nav>
                     <Content>
                         <Title>{data.title}</Title>
-                        <StandFirst>{data.desc}</StandFirst>
+                        <StandFirst
+                            dangerouslySetInnerHTML={{ __html: data.desc }}
+                        />
                     </Content>
                 </PageWrapper>
             </Wrapper>

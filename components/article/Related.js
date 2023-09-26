@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-    font-family: 'Prompt', sans-serif;
     text-transform: uppercase;
     max-width: 1220px;
     padding: 0 5px;

@@ -4,236 +4,122 @@ import styled from 'styled-components';
 import { device } from '~/config/utils';
 
 const Container = styled.div`
-    margin-bottom: 100px;
-    overflow: hidden;
-    @media ${device.laptopS} {
+    position: relative;
+    margin-bottom: 50px;
+    max-width: 100%;
+    flex-basis: 100%;
+    cursor: pointer;
+    width: 100%;
+
+    @media ${device.tablet} {
+        max-width: 80%;
+        flex-basis: 100%;
+    }
+
+    @media ${device.laptop} {
+        max-width: 50%;
+        flex-basis: 50%;
     }
 `;
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-    height: 90%;
-    padding: 30px;
-
-    @media ${device.laptopS} {
-        flex-direction: row;
-        padding: 60px;
-    }
-`;
-
-const Counter = styled.div`
-    color: #dbef89;
-    background-color: black;
-    border-radius: 20px;
-    line-height: 1;
-    display: grid;
-    place-items: center;
-    padding: 10px 20px;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 500;
-    position: absolute;
-    font-size: 20px;
-    top: 15px;
-    left: 30px;
-
-    @media ${device.laptopS} {
-        padding: 15px 25px;
-        top: 30px;
-        left: 40px;
+    @media ${device.tablet} {
     }
 `;
 
 const Content = styled.div`
-    flex-basis: 100%;
-    max-width: 100%;
+    position: absolute;
+    bottom: -50px;
+    background-color: white;
+    box-shadow: 2px 4px 20px 7px rgba(24, 39, 75, 0.12);
     display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding-bottom: 8%;
+    right: 10px;
+    max-width: 492px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
 
-    @media ${device.laptopS} {
-        flex-basis: 50%;
-        max-width: 50%;
-        padding: 0 20px 5% 0px;
+    @media ${device.tablet} {
     }
 `;
 
 const ImageWrapper = styled.div`
     flex-basis: 100%;
     max-width: 100%;
-    aspect-ratio: 1.5;
+    aspect-ratio: 1.4;
     position: relative;
+    box-shadow: 2px 4px 20px 7px rgba(24, 39, 75, 0.12);
 
     img {
         object-fit: cover;
         object-position: top center;
-        border-radius: 20px;
-        margin: initial !important;
-        height: 90% !important;
-        min-height: initial !important;
-        color: initial !important;
     }
 
-    @media ${device.laptopS} {
-        flex-basis: 50%;
-        max-width: 50%;
+    @media ${device.tablet} {
     }
 `;
 
 const Title = styled.div`
-    p {
-        font-family: 'Prompt', sans-serif;
-        font-weight: 500;
-        font-size: 22px;
-        max-width: 600px;
-        line-height: 1.3;
-        margin-bottom: 10px;
-        @media ${device.laptopS} {
-            font-size: 28px;
-        }
-    }
-
-    span {
-        position: relative;
-        background-size: 110%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        [data-hl='true'] & {
-            background-image: url('/highlight.png');
-        }
-        [data-hl='false'] & {
-            background-image: url('/highlight2.png');
-            background-size: 110%;
-        }
-    }
-`;
-
-const Desc = styled.div`
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    max-width: 500px;
-    margin-bottom: 40px;
-
-    @media ${device.laptopS} {
-        font-size: 22px;
-        margin-bottom: 60px;
+    padding: 24px 32px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 70%;
+    flex-basis: 70%;
+    @media ${device.laptop} {
     }
 `;
 
 const Cta = styled.div`
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 21px;
-    position: relative;
-    cursor: pointer;
-    font-family: 'Prompt', sans-serif;
-    font-weight: 500;
-    font-size: 19px;
-    line-height: 1;
+    max-width: 30%;
+    flex-basis: 30%;
+    color: #ff7442;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
 
     svg {
-        position: relative;
-        z-index: 2;
+        transform: translate(5px, 5px);
     }
 
-    &:hover {
-        &:after {
-            width: 100%;
-            transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-    }
-
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 49px;
-        height: 100%;
-        z-index: 1;
-        border-radius: 12px;
-        transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-        [data-hl='true'] & {
-            background-color: #62d84e;
-        }
-        [data-hl='false'] & {
-            background-color: #dbef89;
-        }
-    }
-    @media ${device.laptopS} {
+    @media ${device.tablet} {
     }
 `;
 
-const CtaContent = styled.div`
-    position: relative;
-    z-index: 2;
-    @media ${device.laptopS} {
-    }
-`;
-
-const TitleContainer = styled.div`
-    @media ${device.laptopS} {
-    }
-`;
-
-const ArticleCard = ({ data, aId, total }) => {
-    const id = aId + 1;
+const ArticleCard = ({ data }) => {
     return (
-        <Container
-            className={`custom-card card${aId}`}
-            style={{ zIndex: aId }}
-            data-hl={data.highlight}
-            data-anchor={data.anchorTop}
-        >
-            <Counter>
-                {id} of {total}
-            </Counter>
-            <Wrapper>
-                <>
-                    <Link href={`/article/${data.id}`}>
-                        <Content>
-                            <TitleContainer>
-                                <Title
-                                    dangerouslySetInnerHTML={{
-                                        __html: data.metaData.cardTitle,
-                                    }}
+        <Container>
+            <Link href={`/article/${data.id}`}>
+                <Wrapper>
+                    <ImageWrapper>
+                        <Image
+                            src={data.metaData.articleImage}
+                            layout="fill"
+                            alt=""
+                        />
+                    </ImageWrapper>
+                    <Content>
+                        <Title>{data.metaData.title}</Title>
+                        <Cta>
+                            Read More{' '}
+                            <svg
+                                width="27"
+                                height="14"
+                                viewBox="0 0 27 14"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0 6.89043C0.13673 6.44679 0.466334 6.3608 0.867936 6.3608C8.74211 6.36421 16.6163 6.36353 24.4911 6.36353H24.8848C24.7719 6.23726 24.7058 6.15809 24.6345 6.08438C23.0763 4.4716 21.5174 2.85882 19.9586 1.24603C19.909 1.19485 19.8568 1.14502 19.8106 1.0911C19.5596 0.801035 19.5523 0.440668 19.7901 0.18609C20.024 -0.0643928 20.378 -0.0623455 20.664 0.19428C20.7235 0.247516 20.7789 0.306213 20.8351 0.364226C22.7804 2.37355 24.7263 4.38287 26.6709 6.39288C27.1068 6.84334 27.1095 7.15047 26.6801 7.5941C24.7045 9.63618 22.7282 11.6783 20.7519 13.7197C20.4348 14.0473 20.096 14.0889 19.8218 13.8384C19.592 13.6282 19.5464 13.287 19.7247 13.0283C19.8007 12.9184 19.8945 12.8201 19.987 12.7239C21.5399 11.1179 23.0934 9.51265 24.647 7.90738C24.7131 7.83912 24.7765 7.76678 24.8921 7.64051C24.7217 7.64051 24.6133 7.64051 24.505 7.64051C16.6216 7.64051 8.73881 7.63983 0.855386 7.64392C0.47426 7.64392 0.166454 7.54906 0.00066053 7.16275V6.89043H0Z"
+                                    fill="#FF7442"
                                 />
-                            </TitleContainer>
-                            <Desc>{data.metaData.desc}</Desc>
-                            <Cta>
-                                <svg
-                                    width="37"
-                                    height="8"
-                                    viewBox="0 0 37 8"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M36.3536 4.35355C36.5488 4.15829 36.5488 3.84171 36.3536 3.64645L33.1716 0.464466C32.9763 0.269204 32.6597 0.269204 32.4645 0.464466C32.2692 0.659728 32.2692 0.976311 32.4645 1.17157L35.2929 4L32.4645 6.82843C32.2692 7.02369 32.2692 7.34027 32.4645 7.53553C32.6597 7.7308 32.9763 7.7308 33.1716 7.53553L36.3536 4.35355ZM0 4.5H36V3.5H0V4.5Z"
-                                        fill="black"
-                                    />
-                                </svg>
-                                <CtaContent>
-                                    Explore immersive article
-                                </CtaContent>
-                            </Cta>
-                        </Content>
-                    </Link>
-                </>
-                <ImageWrapper>
-                    <Image
-                        src={data.metaData.articleImage}
-                        layout="fill"
-                        alt=""
-                    />
-                </ImageWrapper>
-            </Wrapper>
+                            </svg>
+                        </Cta>
+                    </Content>
+                </Wrapper>
+            </Link>
         </Container>
     );
 };

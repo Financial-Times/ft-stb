@@ -38,7 +38,7 @@ const MaxWrapper = styled.div`
     margin: 0 auto;
     display: flex;
     overflow: hidden;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     @media ${device.tablet} {
@@ -71,11 +71,22 @@ const Content = styled.div`
     max-width: 100%;
     flex-basis: 100%;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+
+    .author {
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .job {
+        font-size: 14px;
+        margin: 0;
+    }
 
     p {
         font-family: 'Inter', sans-serif;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1.2;
         font-weight: 500;
 
@@ -164,7 +175,7 @@ const AnimationTwo = ({ data }) => {
                     start: 'top center',
                     end: 'bottom center',
                     scrub: true,
-                    markers: true,
+                    markers: false,
                 },
             })
             .to(
@@ -257,10 +268,10 @@ const AnimationTwo = ({ data }) => {
                         plans to get as much data, meet more people and make
                         more deals in one place within a short time.”
                     </p>
-                    <p>
-                        – Shane Chesson, venture capital partner and Singapore
-                        Venture and Private Capital Association (SVCA) board
-                        member.
+                    <p className="author">Shane Chesson</p>
+                    <p className="job">
+                        Venture capital partner and Singapore Venture and
+                        Private Capital Association (SVCA) board member.
                     </p>
                 </Content>
             </MaxWrapper>

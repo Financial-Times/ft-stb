@@ -13,11 +13,10 @@ import Metadata from '~/components/includes/Metadata';
 import Related from '~/components/article/Related';
 import Quote from '~/components/article/Quote';
 import Hero from '~/components/article/Hero';
-import Script from 'next/script';
 import AnimationOne from '~/components/animation/AnimationOne';
 import AnimationTwo from '~/components/animation/AnimationTwo';
-import Cta from '~/components/article/Cta';
 import Magnet from '~/components/includes/Magnet';
+import Footnotes from '~/components/includes/Footnotes';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -106,13 +105,16 @@ export default function ArticlePage({ post, related }) {
                                     return <Quote key={el.id} data={el.data} />;
                                 case 'animation':
                                     return renderAnimation(el.data);
+                                case 'cta':
+                                    return <Magnet data={el.data} />;
+                                case 'footnotes':
+                                    return <Footnotes data={el.data} />;
                             }
                         })}
-                        <Magnet />
                     </ArticleContainer>
                 </main>
             </Wrapper>
-            {/* <Related data={related} /> */}
+            <Related data={related} />
             {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=e547afbc309d40bb8703bbc4fbd865f4" />
             <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
             <div id="brandmetrics-survey" className="brandmetrics-survey">
