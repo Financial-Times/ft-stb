@@ -57,7 +57,7 @@ const ScrollingWords = styled.div`
         line-height: 1.2;
         font-size: 22px;
         @media ${device.tablet} {
-            font-size: 40px;
+            font-size: 30px;
         }
     }
 

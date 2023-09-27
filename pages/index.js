@@ -76,7 +76,7 @@ const HubHeroTitle = styled.div`
 `;
 
 const metaData = {
-    title: 'Determined, not deterred',
+    title: 'Conversations of our time: defining the zeitgeist in Singapore',
     desc: 'Companies can cut costs and drive growth at the same time. Despite a backdrop of macro uncertainty, leading organisations are doubling down on their digital transformation efforts in order to prioritise both goals.',
     contentType: 'hub',
     publicationDate: '2023-10-13',
@@ -102,7 +102,6 @@ const metaData = {
 
 export default function Home({ data }) {
     const { cookieConsent } = useContext(AppContext);
-    const cardRef = useRef(null);
 
     useEffect(() => {
         FtEvents();
@@ -132,7 +131,8 @@ export default function Home({ data }) {
                 <main>
                     <HubHero>
                         <HubHeroTitle>
-                            Lorem Ipsum dolor sit amet consectetur
+                            Conversations of our time: defining the zeitgeist in
+                            Singapore
                         </HubHeroTitle>
                         <Image
                             src={metaData.articleImage}

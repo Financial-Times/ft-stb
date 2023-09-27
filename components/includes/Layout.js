@@ -74,8 +74,10 @@ const GlobalStyles = createGlobalStyle`
     }
   
   p {
-    font-size: 20px;
+    font-size: 16px;
     @media ${device.tablet} {
+      font-size: 18px;
+
     
       }
   }

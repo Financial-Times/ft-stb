@@ -70,8 +70,9 @@ export default function ArticlePage({ post, related }) {
         }
     }, [cookieConsent, site, loaded]);
 
-    const RenderAnimation = ({ id }) => {
-        switch (id) {
+    const RenderAnimation = ({ data }) => {
+        console.log(data);
+        switch (data) {
             case 1:
                 return <AnimationOne />;
             case 2:

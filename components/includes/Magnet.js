@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import { device } from '~/config/utils';
-import Cursor from './cursor/cursor';
-import ButtonCtrl from './cursor/buttonCtrl';
-import { useEffect } from 'react';
 import Link from 'next/link';
 
 const Container = styled.div`
@@ -96,7 +93,12 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.2s ease background-color 0.2s ease;
+        &:hover {
+            background-color: #ff6e3d;
+            color: white;
+            transition: background-color 0.2s ease;
+        }
     }
 
     .button:focus,
@@ -126,14 +128,6 @@ const Wrapper = styled.div`
 `;
 
 const Magnet = ({ data }) => {
-    useEffect(() => {
-        const cursor = new Cursor(document.querySelector('.cursor'));
-        const button = new ButtonCtrl(document.querySelector('.button'));
-
-        button.on('enter', () => cursor.enter());
-        button.on('leave', () => cursor.leave());
-    }, []);
-
     return (
         <Container>
             <div>Why is Singapore a leading hub for events?</div>
@@ -151,14 +145,6 @@ const Magnet = ({ data }) => {
                     </div>
                 </Wrapper>
             </Link>
-            <svg className="cursor" width="0" height="0" viewBox="0 0 25 25">
-                <circle
-                    className="cursor__inner"
-                    cx="12.5"
-                    cy="12.5"
-                    r="6.25"
-                />
-            </svg>
         </Container>
     );
 };

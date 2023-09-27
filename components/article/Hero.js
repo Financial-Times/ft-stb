@@ -29,7 +29,7 @@ const ImageWrapper = styled.div`
         object-position: center center;
     }
     @media ${device.tablet} {
-        aspect-ratio: 2.5;
+        aspect-ratio: 3;
     }
 `;
 

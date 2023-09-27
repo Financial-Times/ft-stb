@@ -63,7 +63,7 @@ const FootNote = styled.div`
 `;
 
 const Footnotes = ({ data }) => {
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
 
     return (
         <Container>
