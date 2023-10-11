@@ -207,7 +207,7 @@ const AnimationOne = ({ data }) => {
                 <Wrapper>
                     <FloatingWrapper ref={floatingRef}>
                         <Floating className="floating" data-pos="1">
-                            Urban food system
+                            Urban food systems
                         </Floating>
                         <Floating className="floating" data-pos="2">
                             Affordable nutrition
