@@ -157,6 +157,11 @@ const ClientFooter = () => {
             url: 'https://www.instagram.com/visit_singapore/',
         },
         {
+            id: 'li',
+            el: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2%3Alinkedin?source=image-url-builder',
+            url: 'https://sg.linkedin.com/company/visitsingapore-business-events',
+        },
+        {
             id: 'tw',
             el: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:twitter?source=origami-image-service-website',
             url: 'https://twitter.com/visitsingapore',
@@ -164,7 +169,7 @@ const ClientFooter = () => {
         {
             id: 'yt',
             el: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftsocial-v2:youtube?source=origami-image-service-website',
-            url: 'https://www.youtube.com/visitsingapore',
+            url: 'https://youtube.com/@singaporeexhibitionandconv2377?si=0Q3ICo3VMaiKkLPK',
         },
         {
             id: 'fb',

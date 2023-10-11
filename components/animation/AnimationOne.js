@@ -38,7 +38,7 @@ const MaxWrapper = styled.div`
     justify-content: center;
     align-items: center;
     @media ${device.tablet} {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 `;
 
@@ -66,7 +66,7 @@ const Content = styled.div`
     max-width: 100%;
     flex-basis: 100%;
     padding: 20px;
-    text-align: right;
+    text-align: left;
 
     p {
         font-family: 'Inter', sans-serif;

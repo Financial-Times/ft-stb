@@ -76,8 +76,8 @@ const HubHeroTitle = styled.div`
 `;
 
 const metaData = {
-    title: 'Conversations of our time: defining the zeitgeist in Singapore',
-    desc: 'Companies can cut costs and drive growth at the same time. Despite a backdrop of macro uncertainty, leading organisations are doubling down on their digital transformation efforts in order to prioritise both goals.',
+    title: "Conversations of our time: Singapore's place in defining the zeitgeist",
+    desc: 'Singapore has firmly established itself as a fulcrum in world trade and innovation. This series showcases the city’s thriving calendar of trade conferences and exhibitions across sectors including financial services and agrifood.',
     contentType: 'hub',
     publicationDate: '2023-10-13',
     campaignName: 'STB',
