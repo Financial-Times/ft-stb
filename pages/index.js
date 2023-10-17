@@ -31,11 +31,11 @@ const ArticleContainer = styled.div`
     padding: 0 20px;
     margin: 0 auto;
     padding: 0 20px;
-    transform: translateY(-150px);
+    transform: translateY(-100px);
     justify-content: center;
     align-items: center;
 
-    @media ${device.laptop} {
+    @media ${device.tablet} {
         flex-direction: row;
         gap: 32px;
         transform: translateY(-150px);
@@ -45,33 +45,52 @@ const ArticleContainer = styled.div`
 const HubHero = styled.div`
     position: relative;
     aspect-ratio: 1;
-
     img {
         object-fit: cover;
         object-position: center center;
+        mask-image: linear-gradient(#fef6e9 10%, transparent);
+        -webkit-mask-image: linear-gradient(#fef6e9 10%, transparent);
     }
     @media ${device.tablet} {
+        aspect-ratio: 1.3;
+    }
+    @media ${device.laptop} {
         aspect-ratio: 2;
     }
 `;
 
 const HubHeroTitle = styled.div`
     position: absolute;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
-    top: 30%;
+    top: 10%;
     right: 50%;
     transform: translateX(50%);
     z-index: 3;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 36px;
     font-style: normal;
-    font-weight: 500;
     line-height: 1.2;
     padding: 0 20px;
+    h1 {
+        font-size: 26px;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: 16px;
+        font-weight: 400;
+    }
     @media ${device.tablet} {
-        font-size: 54px;
+        top: 15%;
+        h1 {
+            font-size: 54px;
+        }
+        h3 {
+            font-size: 24px;
+        }
+    }
+    @media ${device.laptop} {
+        top: 20%;
     }
 `;
 
@@ -131,7 +150,8 @@ export default function Home({ data }) {
                 <main>
                     <HubHero>
                         <HubHeroTitle>
-                        Conversations of our time: Singapore&apos;s place in defining the zeitgeist
+                            <h1>Conversations of our time: Singapore&apos;s place in defining the zeitgeist</h1>
+                            <h3>Singapore has firmly established itself as a fulcrum in world trade and innovation. This series showcases the city’s thriving calendar of trade conferences and exhibitions across sectors including financial services and agrifood.</h3>
                         </HubHeroTitle>
                         <Image
                             src={metaData.articleImage}
