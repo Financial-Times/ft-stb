@@ -122,7 +122,7 @@ export default function Home({ data }) {
         <>
             <Head>
                 <title>
-                    Lorem - Financial Times - Partner Content by SINGAPORE
+                Conversations of our time: Singapore's place in defining the zeitgeist - Financial Times - Partner Content by SINGAPORE
                     TOURISM BOARD
                 </title>
                 <Metadata title={true} data={metaData} />
@@ -131,8 +131,7 @@ export default function Home({ data }) {
                 <main>
                     <HubHero>
                         <HubHeroTitle>
-                            Conversations of our time: defining the zeitgeist in
-                            Singapore
+                        Conversations of our time: Singapore's place in defining the zeitgeist
                         </HubHeroTitle>
                         <Image
                             src={metaData.articleImage}
