@@ -61,7 +61,6 @@ const HubHero = styled.div`
 
 const HubHeroTitle = styled.div`
     position: absolute;
-    max-width: 1000px;
     width: 100%;
     top: 10%;
     right: 50%;
@@ -75,18 +74,30 @@ const HubHeroTitle = styled.div`
     h1 {
         font-size: 26px;
         font-weight: 500;
+        max-width: 1100px;
+        margin: 0 auto;
+        br {
+            display: none;
+        }
     }
     h3 {
         font-size: 16px;
         font-weight: 400;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 20px;
     }
     @media ${device.tablet} {
         top: 15%;
         h1 {
             font-size: 54px;
+            br {
+                display: block;
+            }
         }
         h3 {
             font-size: 24px;
+            padding-top: 40px;
         }
     }
     @media ${device.laptop} {
@@ -150,7 +161,7 @@ export default function Home({ data }) {
                 <main>
                     <HubHero>
                         <HubHeroTitle>
-                            <h1>Conversations of our time: Singapore&apos;s place in defining the zeitgeist</h1>
+                            <h1>Conversations of our time:<br/> Singapore&apos;s place in defining the zeitgeist</h1>
                             <h3>Singapore has firmly established itself as a fulcrum in world trade and innovation. This series showcases the city’s thriving calendar of trade conferences and exhibitions across sectors including financial services and agrifood.</h3>
                         </HubHeroTitle>
                         <Image
