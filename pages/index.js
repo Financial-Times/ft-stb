@@ -48,8 +48,8 @@ const HubHero = styled.div`
     img {
         object-fit: cover;
         object-position: center center;
-        mask-image: linear-gradient(#fef6e9 10%, transparent);
-        -webkit-mask-image: linear-gradient(#fef6e9 10%, transparent);
+        mask-image: linear-gradient(#fef6e9, transparent);
+        -webkit-mask-image: linear-gradient(#fef6e9, transparent);
     }
     @media ${device.tablet} {
         aspect-ratio: 1.3;
