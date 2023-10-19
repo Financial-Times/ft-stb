@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const Pixel = styled.img`
     position: absolute;
-    opacity: 0;
+    display: none;
 `;
 
 export default class MyDocument extends Document {
