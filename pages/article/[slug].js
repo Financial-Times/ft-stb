@@ -125,6 +125,7 @@ export default function ArticlePage({ post, related }) {
                 </main>
             </Wrapper>
             <Related data={related} />
+            <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
             {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=e547afbc309d40bb8703bbc4fbd865f4" />
             <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
             <div id="brandmetrics-survey" className="brandmetrics-survey">

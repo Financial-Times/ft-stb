@@ -16,6 +16,12 @@ const Container = styled.div`
     background-color: #fef6e9;
 `;
 
+const Pixel = styled.img`
+	position: absolute;
+	@media ${device.tablet} {
+	}
+`;
+
 const ArticleContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -169,6 +175,7 @@ export default function Home({ data }) {
                         })}
                     </ArticleContainer>
                 </main>
+                <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
             </Container>
         </>
     );
