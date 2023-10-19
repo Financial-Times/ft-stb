@@ -1,6 +1,5 @@
 import { useEffect, useContext, useRef } from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
 import styled from 'styled-components';
 
 import Metadata from '~/components/includes/Metadata';
@@ -15,13 +14,6 @@ import Image from 'next/image';
 
 const Container = styled.div`
     background-color: #fef6e9;
-`;
-
-const Pixel = styled.img`
-    position: absolute;
-    opacity: 0;
-    @media ${device.tablet} {
-    }
 `;
 
 const ArticleContainer = styled.div`
@@ -177,19 +169,6 @@ export default function Home({ data }) {
                         })}
                     </ArticleContainer>
                 </main>
-                <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
-                <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
-                <div id="brandmetrics-survey" className="brandmetrics-survey">
-                    <script
-                        dangerouslySetInnerHTML={{
-                            __html: `             window._brandmetrics = window._brandmetrics || [];
-                    setTimeout(function() {
-                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"2e7f61900eab46a7b37b9d210003fda0", style:
-                      "ft_flyin_default"}});
-                    }, 10000);`,
-                        }}
-                    ></script>
-                </div>
             </Container>
         </>
     );
