@@ -176,19 +176,19 @@ export default function Home({ data }) {
                         })}
                     </ArticleContainer>
                 </main>
-                {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=59bce001375b4b4098bafa219d383803" />
+                <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
                 <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
                 <div id="brandmetrics-survey" className="brandmetrics-survey">
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `             window._brandmetrics = window._brandmetrics || [];
                     setTimeout(function() {
-                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"59bce001375b4b4098bafa219d383803", style:
+                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"2e7f61900eab46a7b37b9d210003fda0", style:
                       "ft_flyin_default"}});
                     }, 10000);`,
                         }}
                     ></script>
-                </div> */}
+                </div>
             </Container>
         </>
     );
