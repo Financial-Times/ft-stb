@@ -64,7 +64,7 @@ const FtEvents = () => {
                 if (!document.querySelector('.brandmetric')) {
                     const imgScript = new Image();
                     imgScript.src =
-                        'https://collector.brandmetrics.com/Info?pixel=e578745c73534b238b4bfa27effb3ff0';
+                        'https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0';
                     imgScript.classList.add('brandmetric');
                     document
                         .getElementsByTagName('head')[0]
