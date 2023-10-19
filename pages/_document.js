@@ -7,7 +7,6 @@ import Pixels from '../config/Pixels';
 import styled from 'styled-components';
 
 const Pixel = styled.img`
-    position: absolute;
     display: none;
 `;
 
