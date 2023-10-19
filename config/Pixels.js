@@ -57,7 +57,6 @@ const Pixels = () => {
 				async
 				src="https://e1c3fd73-dd41-4abd-b80b-4278d52bf7aa.edge.permutive.app/e1c3fd73-dd41-4abd-b80b-4278d52bf7aa-web.js"
 			></script>
-			<Script src="https://cdn.brandmetrics.com/survey/script/2e7f61900eab46a7b37b9d210003fda0.js?checkconsent=false"></Script>
 		</>
 	);
 };
