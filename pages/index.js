@@ -1,5 +1,6 @@
 import { useEffect, useContext, useRef } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import styled from 'styled-components';
 
 import Metadata from '~/components/includes/Metadata';
