@@ -93,7 +93,7 @@ export default class MyDocument extends Document {
                     <Main />
                     <NextScript />
                     <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
-                    <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
+                    <script async src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></script>
                     <div id="brandmetrics-survey" className="brandmetrics-survey">
                        <script
                            dangerouslySetInnerHTML={{
