@@ -31,11 +31,11 @@ const ArticleContainer = styled.div`
     padding: 0 20px;
     margin: 0 auto;
     padding: 0 20px;
-    transform: translateY(-150px);
+    transform: translateY(-100px);
     justify-content: center;
     align-items: center;
 
-    @media ${device.laptop} {
+    @media ${device.tablet} {
         flex-direction: row;
         gap: 32px;
         transform: translateY(-150px);
@@ -45,33 +45,63 @@ const ArticleContainer = styled.div`
 const HubHero = styled.div`
     position: relative;
     aspect-ratio: 1;
-
     img {
         object-fit: cover;
         object-position: center center;
+        mask-image: linear-gradient(#fef6e9, transparent);
+        -webkit-mask-image: linear-gradient(#fef6e9, transparent);
     }
     @media ${device.tablet} {
+        aspect-ratio: 1.3;
+    }
+    @media ${device.laptop} {
         aspect-ratio: 2;
     }
 `;
 
 const HubHeroTitle = styled.div`
     position: absolute;
-    max-width: 800px;
     width: 100%;
-    top: 30%;
+    top: 10%;
     right: 50%;
     transform: translateX(50%);
     z-index: 3;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 36px;
     font-style: normal;
-    font-weight: 500;
     line-height: 1.2;
     padding: 0 20px;
+    h1 {
+        font-size: 26px;
+        font-weight: 500;
+        max-width: 1100px;
+        margin: 0 auto;
+        br {
+            display: none;
+        }
+    }
+    h3 {
+        font-size: 16px;
+        font-weight: 400;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
     @media ${device.tablet} {
-        font-size: 54px;
+        top: 15%;
+        h1 {
+            font-size: 54px;
+            br {
+                display: block;
+            }
+        }
+        h3 {
+            font-size: 24px;
+            padding-top: 40px;
+        }
+    }
+    @media ${device.laptop} {
+        top: 20%;
     }
 `;
 
@@ -122,7 +152,7 @@ export default function Home({ data }) {
         <>
             <Head>
                 <title>
-                    Lorem - Financial Times - Partner Content by SINGAPORE
+                Conversations of our time: Singapore&apos;s place in defining the zeitgeist - Financial Times - Partner Content by SINGAPORE
                     TOURISM BOARD
                 </title>
                 <Metadata title={true} data={metaData} />
@@ -131,8 +161,8 @@ export default function Home({ data }) {
                 <main>
                     <HubHero>
                         <HubHeroTitle>
-                            Conversations of our time: defining the zeitgeist in
-                            Singapore
+                            <h1>Conversations of our time:<br/> Singapore&apos;s place in defining the zeitgeist</h1>
+                            <h3>Singapore has firmly established itself as a fulcrum in world trade and innovation. This series showcases the city’s thriving calendar of trade conferences and exhibitions across sectors including financial services and agrifood.</h3>
                         </HubHeroTitle>
                         <Image
                             src={metaData.articleImage}
@@ -146,19 +176,19 @@ export default function Home({ data }) {
                         })}
                     </ArticleContainer>
                 </main>
-                {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=59bce001375b4b4098bafa219d383803" />
+                <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
                 <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
                 <div id="brandmetrics-survey" className="brandmetrics-survey">
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `             window._brandmetrics = window._brandmetrics || [];
                     setTimeout(function() {
-                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"59bce001375b4b4098bafa219d383803", style:
+                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"2e7f61900eab46a7b37b9d210003fda0", style:
                       "ft_flyin_default"}});
                     }, 10000);`,
                         }}
                     ></script>
-                </div> */}
+                </div>
             </Container>
         </>
     );
