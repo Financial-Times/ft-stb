@@ -7,7 +7,7 @@ import Pixels from '../config/Pixels';
 import styled from 'styled-components';
 
 const Pixel = styled.img`
-    display: none;
+    display: none !important;
 `;
 
 export default class MyDocument extends Document {
