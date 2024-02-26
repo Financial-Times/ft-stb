@@ -128,7 +128,7 @@ const Floating = styled.div`
         bottom: 59%;
         right: 15%;
     }
-    
+
     @media ${device.tablet} {
         font-size: 20px;
     }
@@ -220,7 +220,7 @@ const AnimationThree = ({ data }) => {
                 </Wrapper>
                 <Content>
                     <p>
-                        Singapore Green Plan's 5 pillars
+                        Singapore Green Plan’s 5 pillars
                     </p>
                 </Content>
             </MaxWrapper>
