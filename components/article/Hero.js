@@ -42,7 +42,7 @@ const Nav = styled.div`
 
 const NavTitle = styled.div`
     color: #3d464d;
-    white-space: nowrap;
+    //white-space: nowrap;
     @media ${device.tablet} {
     }
 `;
