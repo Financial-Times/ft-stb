@@ -33,11 +33,11 @@ const ArticleContainer = styled.div`
     transform: translateY(-100px);
     justify-content: center;
     align-items: center;
-
     @media ${device.tablet} {
         flex-direction: row;
         gap: 32px;
         transform: translateY(-150px);
+        flex-wrap: wrap;
     }
 `;
 

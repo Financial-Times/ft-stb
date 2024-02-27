@@ -10,15 +10,14 @@ const Container = styled.div`
     flex-basis: 100%;
     cursor: pointer;
     width: 100%;
-
     @media ${device.tablet} {
         max-width: 80%;
         flex-basis: 100%;
     }
 
     @media ${device.laptop} {
-        max-width: 50%;
-        flex-basis: 50%;
+        max-width: 40%;
+        flex-basis: 40%;
     }
 `;
 

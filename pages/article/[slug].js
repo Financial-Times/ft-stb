@@ -15,6 +15,7 @@ import Quote from '~/components/article/Quote';
 import Hero from '~/components/article/Hero';
 import AnimationOne from '~/components/animation/AnimationOne';
 import AnimationTwo from '~/components/animation/AnimationTwo';
+import AnimationThree from '~/components/animation/AnimationThree';
 import Magnet from '~/components/includes/Magnet';
 import Footnotes from '~/components/includes/Footnotes';
 import { useRouter } from 'next/router';
@@ -77,6 +78,8 @@ export default function ArticlePage({ post, related }) {
                 return <AnimationOne />;
             case 2:
                 return <AnimationTwo />;
+            case 3:
+                return <AnimationThree />;
             default:
                 return null;
         }
