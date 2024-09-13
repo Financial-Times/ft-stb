@@ -40,4 +40,4 @@ const getCookieValue = (cookieKey) => {
     return decodeURIComponent(match[1]);
 };
 
-export const ARTICLE_URL = `https://ft.com/partnercontent/stb/articles-three.json?ts=${ts}`;
+export const ARTICLE_URL = `https://ft.com/partnercontent/stb/articles-four.json?ts=${ts}`;
