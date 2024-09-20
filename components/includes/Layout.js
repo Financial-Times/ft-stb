@@ -73,7 +73,28 @@ const GlobalStyles = createGlobalStyle`
     @media ${device.tablet} {
       }
     }
+
+    h3 {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 18px;
+
+    @media ${device.tablet} {
+      }
+    }
   
+    ul {
+      list-style-type: decimal;
+    }
+
+    li {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
   p {
     font-size: 16px;
     @media ${device.tablet} {

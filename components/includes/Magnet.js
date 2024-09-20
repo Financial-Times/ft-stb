@@ -130,7 +130,9 @@ const Wrapper = styled.div`
 const Magnet = ({ data }) => {
     return (
         <Container>
-            <div>Why is Singapore a leading hub for events?</div>
+            <div>
+                Discover why Singapore is a leading hub for business events
+            </div>
 
             <Link href={data.link}>
                 <Wrapper>
@@ -138,7 +140,7 @@ const Magnet = ({ data }) => {
                         <button className="button">
                             <span className="button__text">
                                 <span className="button__text-inner">
-                                    Discover Singapore here
+                                    Find out more here
                                 </span>
                             </span>
                         </button>

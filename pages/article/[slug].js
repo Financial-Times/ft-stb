@@ -19,6 +19,8 @@ import AnimationThree from '~/components/animation/AnimationThree';
 import Magnet from '~/components/includes/Magnet';
 import Footnotes from '~/components/includes/Footnotes';
 import { useRouter } from 'next/router';
+import LottiePlayer from '~/components/animation/LottiePlayer';
+import Events from '~/components/article/Events';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -120,6 +122,12 @@ export default function ArticlePage({ post, related }) {
                                     );
                                 case 'cta':
                                     return <Magnet key={i} data={el.data} />;
+                                case 'lottie':
+                                    return (
+                                        <LottiePlayer key={i} data={el.data} />
+                                    );
+                                case 'events':
+                                    return <Events key={i} />;
                                 case 'footnotes':
                                     return <Footnotes key={i} data={el.data} />;
                             }
