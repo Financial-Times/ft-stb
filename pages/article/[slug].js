@@ -21,6 +21,7 @@ import Footnotes from '~/components/includes/Footnotes';
 import { useRouter } from 'next/router';
 import LottiePlayer from '~/components/animation/LottiePlayer';
 import Events from '~/components/article/Events';
+import Script from 'next/script';
 
 const Wrapper = styled.div`
     @media ${device.tablet} {
@@ -136,20 +137,19 @@ export default function ArticlePage({ post, related }) {
                 </main>
             </Wrapper>
             <Related data={related} />
-            <Pixel src="https://collector.brandmetrics.com/Info?pixel=2e7f61900eab46a7b37b9d210003fda0" />
-            {/* <Pixel src="https://collector.brandmetrics.com/Info?pixel=e547afbc309d40bb8703bbc4fbd865f4" />
+            <Pixel src="https://collector.brandmetrics.com/Info?pixel=56ce6099431843c6a9e334fa22497863" />
             <Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
             <div id="brandmetrics-survey" className="brandmetrics-survey">
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `             window._brandmetrics = window._brandmetrics || [];
                     setTimeout(function() {
-                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"e547afbc309d40bb8703bbc4fbd865f4", style:
+                      window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"ca5771290313408cb14bd7d36c800ab7", style:
                       "ft_flyin_default"}});
                     }, 10000);`,
                     }}
                 ></script>
-            </div> */}
+            </div>
         </>
     );
 }
