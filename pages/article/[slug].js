@@ -46,8 +46,6 @@ export default function ArticlePage({ post, related }) {
     const [loaded, setLoaded] = useState(false);
     const router = useRouter();
 
-    useEffect(() => {}, []);
-
     useEffect(() => {
         const isCurrentUrl = () => {
             if (site === document.location.href || site === '') {
