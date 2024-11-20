@@ -130,7 +130,7 @@ export default function ArticlePage({ post, related }) {
                                     );
                                 case 'events':
                                     return <Events key={i} />;
-                                case 'eventsTwo':
+                                case 'eventstwo':
                                     return <EventsTwo key={i} />; 
                                 case 'footnotes':
                                     return <Footnotes key={i} data={el.data} />;
