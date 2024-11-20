@@ -21,6 +21,7 @@ import Footnotes from '~/components/includes/Footnotes';
 import { useRouter } from 'next/router';
 import LottiePlayer from '~/components/animation/LottiePlayer';
 import Events from '~/components/article/Events';
+import EventsTwo from '~/components/article/EventsTwo';
 import Script from 'next/script';
 
 const Wrapper = styled.div`
@@ -129,6 +130,8 @@ export default function ArticlePage({ post, related }) {
                                     );
                                 case 'events':
                                     return <Events key={i} />;
+                                case 'eventsTwo':
+                                    return <EventsTwo key={i} />; 
                                 case 'footnotes':
                                     return <Footnotes key={i} data={el.data} />;
                             }
