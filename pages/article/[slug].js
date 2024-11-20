@@ -129,9 +129,9 @@ export default function ArticlePage({ post, related }) {
                                         <LottiePlayer key={i} data={el.data} />
                                     );
                                 case 'events':
-                                    return <Events key={i} />;
+                                    return <Events key={i} data={el.data}/>;
                                 case 'eventstwo':
-                                    return <EventsTwo key={i} />; 
+                                    return <EventsTwo key={i} data={el.data}/>; 
                                 case 'footnotes':
                                     return <Footnotes key={i} data={el.data} />;
                             }
