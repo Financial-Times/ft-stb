@@ -1,5 +1,5 @@
 {
-	"name": "ft-edp",
+	"name": "ft-stb",
 	"version": "1.0",
 	"private": true,
 	"cacheDirectories": [
@@ -35,5 +35,8 @@
 		"eslint-config-next": "12.2.4",
 		"prettier": "^2.8.8",
 		"sass": "^1.57.1"
+	},
+	"engines": {
+		"node": "20.11.0"
 	}
 }
