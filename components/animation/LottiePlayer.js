@@ -27,14 +27,14 @@ const Wrapper = styled.div`
 const LottiePlayer = ({ data }) => {
     const player = useRef();
     const container = useRef();
-    const hasPlayed = useRef(false); // Tracks if the animation has already played
+    const hasPlayed = useRef(false); // Tracks if animation has already played
 
     const [current, setCurrent] = useState({
         mobile: '',
         desktop: '',
     });
 
-    const [loadState, setLoadState] = useState(false);
+    const [loadState, setLoadstate] = useState(false);
 
     const [isMobile, setIsMobile] = useState(true);
 
@@ -45,7 +45,7 @@ const LottiePlayer = ({ data }) => {
         mm.add('(min-width: 767px)', () => {
             setIsMobile(false);
         });
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         if (loadState) {
@@ -57,7 +57,7 @@ const LottiePlayer = ({ data }) => {
                     markers: false,
                     onEnter: () => {
                         if (!hasPlayed.current) {
-                            player.current?.play(); 
+                            player.current?.play(); // Play only if it hasn't played before
                         }
                     },
                 },
@@ -66,7 +66,11 @@ const LottiePlayer = ({ data }) => {
     }, [loadState]);
 
     const handleComplete = () => {
-        hasPlayed.current = true; 
+        const animationData = isMobile ? current.mobile : current.desktop; // Get the active animation data
+        const totalFrames = animationData.op; // 'op' property gives the total number of frames
+        const frameToStop = totalFrames - 2; // Stop just before the last frame
+        player.current?.goToAndStop(frameToStop, true); // Pause at the calculated frame
+        hasPlayed.current = true; // Mark as played
     };
 
     const setLottie = (data) => {
@@ -98,14 +102,14 @@ const LottiePlayer = ({ data }) => {
                 <Player
                     onEvent={(event) => {
                         if (event === 'load') {
-                            setLoadState(true);
+                            setLoadstate(true);
                         } else if (event === 'complete') {
-                            handleComplete(); 
+                            handleComplete();
                         }
                     }}
                     ref={player}
                     autoplay={false}
-                    loop={false} 
+                    loop={false}
                     controls={false}
                     src={isMobile ? current.mobile : current.desktop}
                 ></Player>
