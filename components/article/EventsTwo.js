@@ -26,7 +26,7 @@ const EventsTwo = () => {
                     </li>
                     <li>
                         <a href="https://ad.doubleclick.net/ddm/clk/601157769;409013237;g;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755}">
-                            LSI Asia ’25
+                            LSI Asia
                         </a>{' '}
                         &ndash; 10 to 13 June
                     </li>
