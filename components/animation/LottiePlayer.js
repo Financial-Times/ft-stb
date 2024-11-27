@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import { device } from '~/config/utils';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 import OneMobile from '~/components/animation/data/mobileOne.json';
-
 import OneDesktop from '~/components/animation/data/desktopOne.json';
+
+import TwoMobile from '~/components/animation/data/mobileTwo.json';
+import TwoDesktop from '~/components/animation/data/desktopTwo.json';
 
 const Container = styled.div`
     margin: 48px 0;
@@ -26,6 +27,7 @@ const Wrapper = styled.div`
 const LottiePlayer = ({ data }) => {
     const player = useRef();
     const container = useRef();
+    const hasPlayed = useRef(false); // Tracks if animation has already played
 
     const [current, setCurrent] = useState({
         mobile: '',
@@ -43,7 +45,7 @@ const LottiePlayer = ({ data }) => {
         mm.add('(min-width: 767px)', () => {
             setIsMobile(false);
         });
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         if (loadState) {
@@ -53,31 +55,36 @@ const LottiePlayer = ({ data }) => {
                     start: 'top center',
                     end: 'bottom center',
                     markers: false,
-                    scrub: true,
-                    markers: false,
                     onEnter: () => {
-                        player.current?.play();
-                    },
-                    onEnterBack: () => {
-                        player.current?.play();
-                    },
-                    onLeave: () => {
-                        player.current?.pause();
-                    },
-                    onLeaveBack: () => {
-                        player.current?.pause();
+                        if (!hasPlayed.current) {
+                            player.current?.play(); // Play only if it hasn't played before
+                        }
                     },
                 },
             });
         }
     }, [loadState]);
 
-    function setLottie(data) {
+    const handleComplete = () => {
+        const animationData = isMobile ? current.mobile : current.desktop; // Get the active animation data
+        const totalFrames = animationData.op; // 'op' property gives the total number of frames
+        const frameToStop = totalFrames - 2; // Stop just before the last frame
+        player.current?.goToAndStop(frameToStop, true); // Pause at the calculated frame
+        hasPlayed.current = true; // Mark as played
+    };
+
+    const setLottie = (data) => {
         switch (data) {
             case 1:
                 setCurrent({
                     mobile: OneMobile,
                     desktop: OneDesktop,
+                });
+                break;
+            case 2:
+                setCurrent({
+                    mobile: TwoMobile,
+                    desktop: TwoDesktop,
                 });
                 break;
             default:
@@ -87,7 +94,7 @@ const LottiePlayer = ({ data }) => {
                 });
                 break;
         }
-    }
+    };
 
     return (
         <Container ref={container}>
@@ -96,6 +103,8 @@ const LottiePlayer = ({ data }) => {
                     onEvent={(event) => {
                         if (event === 'load') {
                             setLoadstate(true);
+                        } else if (event === 'complete') {
+                            handleComplete();
                         }
                     }}
                     ref={player}

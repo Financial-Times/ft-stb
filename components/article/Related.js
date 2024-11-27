@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { device } from '~/config/utils';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { device } from '~/config/utils';
 import RelatedItem from './RelatedItem';
 
 import 'swiper/css';
@@ -12,20 +12,19 @@ import 'swiper/css/pagination';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Container = styled.div`
-    position: relative;
-    z-index: 5;
-    padding: 50px 0 0 0;
-
-    @media ${device.tablet} {
-    }
+	max-width: 1290px;
+	margin: 50px auto 50px auto;
+	@media ${device.tablet} {
+	}
 `;
 
 const Wrapper = styled.div`
-    position: relative;
-    padding: 0 10px;
-    @media ${device.tablet} {
-        padding: 0;
-    }
+	position: relative;
+	padding: 5px;
+	margin: 0 auto;
+	@media ${device.tablet} {
+		padding: 0 10px;
+	}
 `;
 
 const Title = styled.div`
@@ -44,168 +43,120 @@ const Title = styled.div`
     }
 `;
 
-const SwiperWrapper = styled.div`
-    max-width: 1450px;
-    margin: 0 auto;
-    padding: 0 20px;
-    @media ${device.tablet} {
-        .swiper-wrapper {
-            align-items: center;
-            justify-content: center;
-        }
-    }
-`;
-
 const RelatedSwiper = styled.div`
-    @media ${device.tablet} {
-    }
+	@media ${device.tablet} {
+		width: calc(100% - 200px);
+		margin: 0 auto;
+	}
 `;
 
 const SwiperPagination = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+	padding: 20px;
 
-    .swiper-pagination-bullets {
-        bottom: -5%;
-    }
-    .button-next {
-        cursor: pointer;
-        &[aria-disabled='true'] {
-            opacity: 0.5;
-        }
+	.swiper-pagination-bullet {
+		border-color: #f8f8f8;
+		border: 1px solid;
+	}
+	.swiper-pagination-bullet-active {
+		border: none;
+		color: black;
+		padding: 5px 30px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 16px;
+		background-color: #ff6e3d;
+	}
 
-        top: initial;
-        bottom: -5%;
-        svg {
-            transform: rotate(180deg);
-        }
-    }
-    .button-prev {
-        cursor: pointer;
-        &[aria-disabled='true'] {
-            opacity: 0.5;
-        }
-        top: initial;
-        bottom: -5%;
-    }
+	.active {
+	}
+	@media ${device.tablet} {
+		.swiper-wrapper {
+			justify-content: center;
+		}
+	}
+`;
 
-    .swiper-pagination-bullet {
-        &.swiper-pagination-bullet-active {
-            background-color: #0f9199;
-        }
-    }
+const NavigationWrapper = styled.div`
+	.swiper-button-next {
+		top: 5%;
+		width: initial;
+		transform: rotate(180deg);
+		&:after {
+			content: '';
+		}
+	}
 
-    @media ${device.tablet} {
-    }
+	.swiper-button-prev {
+		top: 5%;
+
+		width: initial;
+		&:after {
+			content: '';
+		}
+	}
+
+	@media ${device.tablet} {
+	}
 `;
 
 const Related = ({ data }) => {
-    return (
-        <Container>
-            <Wrapper>
-                <Title>Related content</Title>
-                <RelatedSwiper>
-                    <SwiperWrapper>
-                        <Swiper
-                            spaceBetween={10}
-                            pagination={{
-                                el: '.swiper-pagination',
-                                clickable: true,
-                            }}
-                            navigation={{
-                                nextEl: '.button-next',
-                                prevEl: '.button-prev',
-                            }}
-                            breakpoints={{
-                                1023: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 20,
-                                },
+	return (
+		<Container>
+			<Wrapper>
+				<Title>Related content</Title>
+				{/* <NavigationWrapper>
+					<div className="swiper-button-next">
+						<SwiperNext />
+					</div>
+					<div className="swiper-button-prev">
+						<SwiperPrev />
+					</div>
+				</NavigationWrapper> */}
+				<RelatedSwiper>
+					{/*data.map((slide, i) => (
+						<SwiperSlide key={i}>
+							<RelatedItem data={slide} />
+						</SwiperSlide>
+					))*/}
 
-                                320: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 10,
-                                },
-                            }}
-                        >
-                            {data.map((slide, i) => (
-                                <SwiperSlide key={i}>
-                                    <RelatedItem data={slide} />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </SwiperWrapper>
-                    <SwiperPagination>
-                        <div className="button-prev">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="72"
-                                height="72"
-                                viewBox="0 0 72 72"
-                            >
-                                <g
-                                    id="btn_b2t_80x80px_on_hover"
-                                    data-name="btn_b2t 80x80px on_hover"
-                                    transform="translate(-0.017 72.017) rotate(-90)"
-                                >
-                                    <circle
-                                        id="Ellipse_33"
-                                        data-name="Ellipse 33"
-                                        cx="36"
-                                        cy="36"
-                                        r="36"
-                                        transform="translate(0.017 0.017)"
-                                        fill="#0F9199"
-                                    />
-                                    <path
-                                        id="Path_542"
-                                        data-name="Path 542"
-                                        d="M0,13.473l2.369,2.369L11.847,6.3V33.714H15.3V6.228l9.411,9.546,2.3-2.3L13.54,0Z"
-                                        transform="translate(22.51 18.06)"
-                                        fill="#fff"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div className="button-next">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="72"
-                                height="72"
-                                viewBox="0 0 72 72"
-                            >
-                                <g
-                                    id="btn_b2t_80x80px_on_hover"
-                                    data-name="btn_b2t 80x80px on_hover"
-                                    transform="translate(-0.017 72.017) rotate(-90)"
-                                >
-                                    <circle
-                                        id="Ellipse_33"
-                                        data-name="Ellipse 33"
-                                        cx="36"
-                                        cy="36"
-                                        r="36"
-                                        transform="translate(0.017 0.017)"
-                                        fill="#0F9199"
-                                    />
-                                    <path
-                                        id="Path_542"
-                                        data-name="Path 542"
-                                        d="M0,13.473l2.369,2.369L11.847,6.3V33.714H15.3V6.228l9.411,9.546,2.3-2.3L13.54,0Z"
-                                        transform="translate(22.51 18.06)"
-                                        fill="#fff"
-                                    />
-                                </g>
-                            </svg>
-                        </div>
-                        <div className="swiper-pagination"></div>
-                    </SwiperPagination>
-                </RelatedSwiper>
-            </Wrapper>
-        </Container>
-    );
+					<Swiper
+						spaceBetween={10}
+						pagination={{
+							el: '.swiper-pagination',
+							clickable: true,
+						}}
+						breakpoints={{
+							1083: {
+								slidesPerView: 2,
+								spaceBetween: 20,
+							},
+							767: {
+								slidesPerView: 1,
+								spaceBetween: 20,
+							},
+
+							320: {
+								slidesPerView: 1,
+								spaceBetween: 10,
+							},
+						}}
+					>
+						{data.map((slide, i) => (
+							<SwiperSlide key={i}>
+								<RelatedItem data={slide} />
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</RelatedSwiper>
+				<SwiperPagination>
+					<div className="swiper-pagination"></div>
+				</SwiperPagination>
+			</Wrapper>
+		</Container>
+	);
 };
 
 export default Related;
