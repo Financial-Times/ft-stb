@@ -59,22 +59,27 @@ const ImageWrapper = styled.div`
 `;
 
 const Title = styled.div`
-    padding: 24px 32px;
-    font-size: 22px;
+    padding: 24px 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: normal;
     max-width: 70%;
     flex-basis: 70%;
+    @media ${device.tablet} {
+        padding: 24px 32px;
+        font-size: 22px;
+        line-height: 1.3;
+    }
     @media ${device.laptop} {
     }
 `;
 
 const Cta = styled.div`
-    max-width: 30%;
-    flex-basis: 30%;
+    max-width: 35%;
+    flex-basis: 35%;
     color: #ff7442;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 700;
     display: flex;
@@ -84,6 +89,9 @@ const Cta = styled.div`
     }
 
     @media ${device.tablet} {
+        max-width: 30%;
+        flex-basis: 30%;
+        font-size: 16px;
     }
 `;
 
