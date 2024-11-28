@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-    max-width: 1075px;
+    max-width: 1110px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     @media ${device.tablet} {
         flex-direction: row;
+        padding: 0 20px;
     }
 `;
 
