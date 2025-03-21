@@ -13,6 +13,9 @@ import OneDesktop from '~/components/animation/data/desktopOne.json';
 import TwoMobile from '~/components/animation/data/mobileTwo.json';
 import TwoDesktop from '~/components/animation/data/desktopTwo.json';
 
+import ThreeMobile from '~/components/animation/data/mobileThree.json';
+import ThreeDesktop from '~/components/animation/data/desktopThree.json';
+
 const Container = styled.div`
     margin: 48px 0;
     @media ${device.tablet} {
@@ -85,6 +88,12 @@ const LottiePlayer = ({ data }) => {
                 setCurrent({
                     mobile: TwoMobile,
                     desktop: TwoDesktop,
+                });
+                break;
+            case 3:
+                setCurrent({
+                    mobile: ThreeMobile,
+                    desktop: ThreeDesktop,
                 });
                 break;
             default:
